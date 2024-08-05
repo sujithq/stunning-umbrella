@@ -1,0 +1,14 @@
+name: Reusable Workflow
+
+on:
+  workflow_call:
+    secrets:
+      SECRET_NAME:
+        required: true
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print secret
+        run: echo ${{ secrets.SECRET_NAME }}
